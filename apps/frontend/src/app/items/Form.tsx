@@ -16,7 +16,7 @@ const Form = () => {
   const {mutateAsync} = useCreateItems()
 
   const handleBack = () => {
-    navigate('/items/new');
+    navigate('/');
   };
 
   const handleSubmit = async (data: typeof form.values) => {
