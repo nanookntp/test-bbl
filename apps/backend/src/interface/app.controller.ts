@@ -10,17 +10,15 @@ import { AppCreateDto } from "./dto/app.create";
 export class AppController {
     private items:ItemsType[] = []
 
-    constructor(private readonly appService: AppService) { }
+    constructor(private readonly appService: AppService) { this.items.push({
+        id:uuidv4(),
+        name:'Test 1',
+        description:'',
+        createdAt:new Date()
+    })}
 
     @Get('items')
     async get() {
-        this.items.push({
-            id:uuidv4(),
-            name:'Test 1',
-            description:'',
-            createdAt:new Date()
-        })
-
         return {data:this.items}
     }
 
